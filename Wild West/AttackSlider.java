@@ -19,6 +19,10 @@ public class AttackSlider extends Actor
     public void act()
     {
         // Add your action code here.
+        bouncing();
+        setLocation(getX() + deltaX, getY());
+    }
+    private void bouncing(){
         //if touching left side of attack bar go other way
         if(getX() < 200){
             //setLocation(getWorld().getWidth() /2,getWorld().getHeight() /2 );
@@ -33,6 +37,5 @@ public class AttackSlider extends Actor
             
             
         }
-        setLocation(getX() + deltaX, getY());
     }
 }
