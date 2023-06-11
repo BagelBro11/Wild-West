@@ -8,7 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class AttackTest extends World
 {
-
+    int enemyTimer = 0;
+    public void act(){
+        enemyTimer++;
+        if(enemyTimer > Greenfoot.getRandomNumber(4000)){
+            enemyTimer = 0;
+            addObject(new EnemyAttack(), 700, 300);
+        }
+    }
     /**
      * Constructor for objects of class AttackTest.
      * 
@@ -19,5 +26,7 @@ public class AttackTest extends World
         super(900, 400, 1); 
         addObject(new AttackBar(), 450, 300);
         addObject(new AttackSlider(), 450, 300);
+        addObject(new Barrier(), 200, 300);
     }
+    
 }
