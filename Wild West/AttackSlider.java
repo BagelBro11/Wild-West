@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class AttackSlider extends Actor
 {
     int deltaX;
+    int health = 0;
     public AttackSlider(){
         deltaX = 5;
     }
@@ -37,5 +38,19 @@ public class AttackSlider extends Actor
             
             
         }
+    }
+    private void isHit(){
+
+        World w = getWorld();
+        if(isTouching(EnemyAttack.class) && Greenfoot.mousePressed(w)){
+            getWorld().removeObject(EnemyAttack);
+        }
+        else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(w)){
+            getWorld().removeObject(HeroAttack);
+        }
+        else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(w)){
+            health = 0;
+        }
+        
     }
 }
