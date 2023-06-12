@@ -9,12 +9,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PlayerBattleCharacter extends Actor
 {
     boolean attack = true;
-    boolean inBattle = true;
-    boolean draw = true;
+    boolean inBattle = false;
+    boolean drawGun = true;
     int runAnimation = 0;
     int drawAndShoot = 0;
     int holster = 14;
-    int imageDelay = 8;
+    int idle = 0;
+    int runDelayNum = 7;
+    int shootDelayNum = 3;
+    int idleDelayNum = 15;
+    int imageDelay = 1;
     /**
      * Act - do whatever the PlayerBattleCharacter wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -25,7 +29,7 @@ public class PlayerBattleCharacter extends Actor
         if (inBattle == false) {
             imageDelay--;
             if (imageDelay == 0) {
-                imageDelay = 8;
+                imageDelay = runDelayNum;
                 runAnimation++;
                 // Change image
                 setImage("PlayerWalk" + runAnimation + ".png");
@@ -34,19 +38,20 @@ public class PlayerBattleCharacter extends Actor
                 }
             }
         } else {            
-            imageDelay--;
-            if (imageDelay == 0) {
-                imageDelay = 8;
-                // Attack animation
-                if (attack == true) {
+
+            // Attack animation
+            if (attack == true) {
+                imageDelay--;
+                if (imageDelay == 0) {
+                    imageDelay = shootDelayNum;
                     // Draw weapon and shoot
-                    if (draw == true) {
+                    if (drawGun == true) {
                         drawAndShoot++;
                         if (drawAndShoot <= 22) {
                             setImage("PlayerAttack" + drawAndShoot + ".png");
                             if (drawAndShoot == 22) {
                                 drawAndShoot = 0;
-                                draw = false;
+                                drawGun = false;
                             }
                         }
                     } else {
@@ -54,6 +59,16 @@ public class PlayerBattleCharacter extends Actor
                             setImage("PlayerAttack" + holster + ".png");
                         }
                         holster--;
+                    }
+                }
+            } else {
+                imageDelay--;
+                if (imageDelay == 0) {
+                    imageDelay = idleDelayNum;
+                    idle++;
+                    setImage("PlayerBattleIdle" + idle + ".png");
+                    if (idle == 2){
+                        idle = 0;
                     }
                 }
             }
