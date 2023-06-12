@@ -11,7 +11,7 @@ public class EnemyAttack extends Actor
     int deltaX;
 
     public EnemyAttack(){
-        deltaX = -4;
+        deltaX = -3;
     }
 
     /**

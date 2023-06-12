@@ -41,14 +41,14 @@ public class AttackSlider extends Actor
         }
     }
     private void isHit(){
-        World w = getWorld();
-        if(isTouching(EnemyAttack.class) && Greenfoot.mousePressed(w)){
+        
+        if(isTouching(EnemyAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
             removeTouching(EnemyAttack.class);
         }
-        else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(w)){
+        else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
             removeTouching(HeroAttack.class);
         }
-        else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(w)){
+        else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
             health = 0;
         }
         
