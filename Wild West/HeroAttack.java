@@ -15,16 +15,9 @@ public class HeroAttack extends Actor
     public void act()
     {
         // Add your action code here.
-        isHit();
+        
     
     
     }
-    private void isHit(){
-
-        World w = getWorld();
-        if(isTouching(AttackSlider.class) && Greenfoot.mousePressed(w)){
-            getWorld().removeObject(this);
-        }
-
-    }
+    
 }

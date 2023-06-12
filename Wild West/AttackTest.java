@@ -18,7 +18,7 @@ public class AttackTest extends World
             addObject(new EnemyAttack(), 700, 300);
         }
         heroTimer++;
-        if(enemyTimer > Greenfoot.getRandomNumber(4000)){
+        if(heroTimer > Greenfoot.getRandomNumber(6000)){
             heroTimer = 0;
             int randX = getRandomNumber(200, 700);
             addObject(new HeroAttack(), randX, 300);

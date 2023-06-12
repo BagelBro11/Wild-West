@@ -28,17 +28,8 @@ public class EnemyAttack extends Actor
         if(isTouching(Barrier.class)){
             getWorld().removeObject(this);
         }
-        else{
-            isHit();
-        }
+        
     }
 
-    private void isHit(){
-
-        World w = getWorld();
-        if(isTouching(AttackSlider.class) && Greenfoot.mousePressed(w)){
-            getWorld().removeObject(this);
-        }
-
-    }
+    
 }

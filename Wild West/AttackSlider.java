@@ -21,6 +21,7 @@ public class AttackSlider extends Actor
     {
         // Add your action code here.
         bouncing();
+        isHit();
         setLocation(getX() + deltaX, getY());
     }
     private void bouncing(){
@@ -40,13 +41,12 @@ public class AttackSlider extends Actor
         }
     }
     private void isHit(){
-
         World w = getWorld();
         if(isTouching(EnemyAttack.class) && Greenfoot.mousePressed(w)){
-            getWorld().removeObject(EnemyAttack);
+            removeTouching(EnemyAttack.class);
         }
         else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(w)){
-            getWorld().removeObject(HeroAttack);
+            removeTouching(HeroAttack.class);
         }
         else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(w)){
             health = 0;
