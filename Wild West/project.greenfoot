@@ -114,3 +114,7 @@ width=1147
 world.lastInstantiated=AttackTest
 xPosition=0
 yPosition=118
+width=1296
+world.lastInstantiated=MyWorld
+xPosition=0
+yPosition=0
