@@ -50,10 +50,14 @@ public class AttackSlider extends Actor
             removeTouching(EnemyAttack.class);
         }
         else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
-            AttackTest.
+            AttackTest.enemy.health -= 10;
+            
+            System.out.println("Enemy" + AttackTest.enemy.health);
             removeTouching(HeroAttack.class);
         }
         else if(isTouching(AttackBar.class) && Greenfoot.mousePressed(AttackTest.click)){
+            
+            System.out.println("Hero" + AttackTest.hero.health);
             AttackTest.hero.health -= 5;
         }
     

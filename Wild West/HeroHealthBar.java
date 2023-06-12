@@ -23,13 +23,13 @@ public class HeroHealthBar extends Actor
         if (AttackTest.hero.health > 75){
             setImage(img1);
         }
-        if (AttackTest.hero.health > 50 && AttackTest.hero.health < 75){
+        else if (AttackTest.hero.health > 50 && AttackTest.hero.health < 75){
             setImage(img2);
         }
-        if (AttackTest.hero.health > 25 && (AttackTest.hero.health < 50)){
+        else if (AttackTest.hero.health > 25 && (AttackTest.hero.health < 50)){
             setImage(img3);
         }
-        if (AttackTest.hero.health < 25){
+        else{
             setImage(img4);
         }
     }

@@ -20,7 +20,7 @@ public class AttackTest extends World
     
     //test
     static heroexample hero = new heroexample();
-    static enemyexample enemy = new enemyexample();
+    static EnemyExample enemy = new EnemyExample();
     public void act(){
         enemyAttack();
         heroAttack();
@@ -44,7 +44,7 @@ public class AttackTest extends World
         addObject(new HeroHealthBar(), 125, 25);
         addObject(new EnemyHealthBar(), 775, 25);
         hero = new heroexample();
-        enemy = new Enemyexample();
+        enemy = new EnemyExample();
     }
     
     /**
