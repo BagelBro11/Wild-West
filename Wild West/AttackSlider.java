@@ -8,11 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class AttackSlider extends Actor
 {
+    //speed X variable
     int deltaX;
     int health = 0;
     public AttackSlider(){
+        //setting speed
         deltaX = 5;
     }
+
     /**
      * Act - do whatever the AttackSlider wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -24,24 +27,25 @@ public class AttackSlider extends Actor
         isHit();
         setLocation(getX() + deltaX, getY());
     }
+
     private void bouncing(){
         //if touching left side of attack bar go other way
         if(getX() < 200){
-            //setLocation(getWorld().getWidth() /2,getWorld().getHeight() /2 );
             deltaX = 5;
-            
-            
+
         }
         //if touching right side of attack bar go other way
         if(getX() > 700){
-            //setLocation(getWorld().getWidth() /2,getWorld().getHeight() /2 );
             deltaX = -5;
-            
-            
+
         }
     }
+    
+    /**
+     * method which reads if the attack bar is touching any objects which would cause reprocussions
+     */
     private void isHit(){
-        
+
         if(isTouching(EnemyAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
             removeTouching(EnemyAttack.class);
         }
@@ -51,6 +55,6 @@ public class AttackSlider extends Actor
         else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
             health = 0;
         }
-        
+
     }
 }
