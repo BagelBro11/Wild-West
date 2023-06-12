@@ -10,7 +10,7 @@ public class AttackSlider extends Actor
 {
     //speed X variable
     int deltaX;
-    int health = 0;
+    
     public AttackSlider(){
         //setting speed
         deltaX = 5;
@@ -50,11 +50,12 @@ public class AttackSlider extends Actor
             removeTouching(EnemyAttack.class);
         }
         else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
+            AttackTest.
             removeTouching(HeroAttack.class);
         }
-        else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
-            health = 0;
+        else if(isTouching(AttackBar.class) && Greenfoot.mousePressed(AttackTest.click)){
+            AttackTest.hero.health -= 5;
         }
-
+    
     }
 }

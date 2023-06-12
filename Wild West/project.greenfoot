@@ -6,100 +6,70 @@ class.ClickButton.image=pixil-frame-0\ (9).png
 class.EnemyAttack.image=pixil-frame-0\ (4).png
 class.EnemyHealthBar.image=pixil-frame-0\ (14).png
 class.HeroAttack.image=pixil-frame-0\ (6).png
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 class.HeroHealthBar.image=pixil-frame-0\ (10).png
+class.enemyexample.image=seahorse.png
 class.heroexample.image=hedgehog.png
->>>>>>> Stashed changes
-=======
-class.HeroHealthBar.image=pixil-frame-0\ (10).png
->>>>>>> Attack-Bar-Combat
-dependency1.from=AttackTest
-dependency1.to=ClickButton
+dependency1.from=EnemyAttack
+dependency1.to=Barrier
 dependency1.type=UsesDependency
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-dependency10.from=AttackSlider
-dependency10.to=EnemyAttack
+dependency10.from=AttackTest
+dependency10.to=heroexample
 dependency10.type=UsesDependency
-dependency11.from=AttackSlider
-dependency11.to=AttackTest
+dependency11.from=AttackTest
+dependency11.to=enemyexample
 dependency11.type=UsesDependency
-dependency12.from=AttackSlider
-dependency12.to=HeroAttack
+dependency12.from=AttackTest
+dependency12.to=AttackBar
 dependency12.type=UsesDependency
->>>>>>> Stashed changes
-=======
-dependency10.from=AttackSlider
-dependency10.to=HeroAttack
-dependency10.type=UsesDependency
->>>>>>> Attack-Bar-Combat
-dependency2.from=AttackTest
-dependency2.to=AttackBar
+dependency13.from=AttackTest
+dependency13.to=AttackSlider
+dependency13.type=UsesDependency
+dependency14.from=AttackTest
+dependency14.to=Barrier
+dependency14.type=UsesDependency
+dependency15.from=AttackTest
+dependency15.to=HeroHealthBar
+dependency15.type=UsesDependency
+dependency16.from=AttackTest
+dependency16.to=EnemyHealthBar
+dependency16.type=UsesDependency
+dependency17.from=AttackTest
+dependency17.to=EnemyAttack
+dependency17.type=UsesDependency
+dependency18.from=AttackTest
+dependency18.to=HeroAttack
+dependency18.type=UsesDependency
+dependency2.from=EnemyAttack
+dependency2.to=AttackTest
 dependency2.type=UsesDependency
-dependency3.from=AttackTest
-dependency3.to=AttackSlider
+dependency3.from=AttackSlider
+dependency3.to=EnemyAttack
 dependency3.type=UsesDependency
-dependency4.from=AttackTest
-dependency4.to=Barrier
+dependency4.from=AttackSlider
+dependency4.to=AttackTest
 dependency4.type=UsesDependency
-dependency5.from=AttackTest
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-dependency5.to=Barrier
+dependency5.from=AttackSlider
+dependency5.to=HeroAttack
 dependency5.type=UsesDependency
-dependency6.from=AttackTest
-dependency6.to=ClickButton
-=======
-dependency5.to=HeroHealthBar
-dependency5.type=UsesDependency
-dependency6.from=AttackTest
-dependency6.to=EnemyHealthBar
->>>>>>> Stashed changes
-=======
-dependency5.to=EnemyAttack
-dependency5.type=UsesDependency
-dependency6.from=AttackTest
-dependency6.to=HeroAttack
->>>>>>> Attack-Bar-Combat
+dependency6.from=AttackSlider
+dependency6.to=AttackBar
 dependency6.type=UsesDependency
-dependency7.from=AttackTest
-dependency7.to=EnemyAttack
+dependency7.from=HeroHealthBar
+dependency7.to=AttackTest
 dependency7.type=UsesDependency
-dependency8.from=AttackTest
-dependency8.to=HeroAttack
+dependency8.from=EnemyHealthBar
+dependency8.to=AttackTest
 dependency8.type=UsesDependency
-<<<<<<< Updated upstream
-dependency9.from=AttackSlider
-<<<<<<< HEAD
-dependency9.to=HeroAttack
-=======
-dependency9.from=EnemyAttack
-dependency9.to=Barrier
->>>>>>> Stashed changes
-=======
-dependency9.to=AttackTest
->>>>>>> Attack-Bar-Combat
+dependency9.from=AttackTest
+dependency9.to=ClickButton
 dependency9.type=UsesDependency
 editor.fx.0.height=737
 editor.fx.0.width=814
-editor.fx.0.x=76
-editor.fx.0.y=24
+editor.fx.0.x=81
+editor.fx.0.y=28
 height=585
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-package.numDependencies=9
-package.numTargets=8
-=======
-package.numDependencies=12
-package.numTargets=11
->>>>>>> Stashed changes
-=======
-package.numDependencies=10
-package.numTargets=10
->>>>>>> Attack-Bar-Combat
+package.numDependencies=18
+package.numTargets=12
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -115,108 +85,84 @@ readme.x=10
 readme.y=10
 simulation.speed=50
 target1.height=70
-target1.name=AttackTest
+target1.name=ClickButton
 target1.showInterface=false
 target1.type=ClassTarget
 target1.width=120
 target1.x=0
 target1.y=0
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 target10.height=70
-target10.name=MyWorld
-=======
-target10.height=70
-target10.name=EnemyHealthBar
->>>>>>> Attack-Bar-Combat
+target10.name=EnemyAttack
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=120
 target10.x=0
 target10.y=0
-<<<<<<< HEAD
 target11.height=70
-target11.name=EnemyHealthBar
+target11.name=MyWorld
 target11.showInterface=false
 target11.type=ClassTarget
 target11.width=120
 target11.x=0
 target11.y=0
->>>>>>> Stashed changes
-=======
->>>>>>> Attack-Bar-Combat
+target12.height=70
+target12.name=EnemyHealthBar
+target12.showInterface=false
+target12.type=ClassTarget
+target12.width=120
+target12.x=0
+target12.y=0
 target2.height=70
-target2.name=heroexample
+target2.name=HeroAttack
 target2.showInterface=false
 target2.type=ClassTarget
 target2.width=120
 target2.x=0
 target2.y=0
 target3.height=70
-target3.name=ClickButton
+target3.name=enemyexample
 target3.showInterface=false
 target3.type=ClassTarget
 target3.width=120
 target3.x=0
 target3.y=0
 target4.height=70
-target4.name=HeroAttack
+target4.name=Barrier
 target4.showInterface=false
 target4.type=ClassTarget
 target4.width=120
 target4.x=0
 target4.y=0
 target5.height=70
-target5.name=EnemyAttack
+target5.name=AttackSlider
 target5.showInterface=false
 target5.type=ClassTarget
 target5.width=120
 target5.x=0
 target5.y=0
 target6.height=70
-target6.name=Barrier
+target6.name=AttackBar
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=120
 target6.x=0
 target6.y=0
 target7.height=70
-target7.name=AttackSlider
+target7.name=HeroHealthBar
 target7.showInterface=false
 target7.type=ClassTarget
 target7.width=120
 target7.x=0
 target7.y=0
 target8.height=70
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-target8.name=MyWorld
-=======
-target8.name=AttackBar
->>>>>>> Stashed changes
-=======
-target8.name=HeroHealthBar
->>>>>>> Attack-Bar-Combat
+target8.name=AttackTest
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=120
 target8.x=0
 target8.y=0
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-version=3.0.0
-width=1147
-world.lastInstantiated=AttackTest
-xPosition=0
-yPosition=118
-width=1296
-world.lastInstantiated=MyWorld
-xPosition=0
-yPosition=0
-=======
 target9.height=70
-target9.name=HeroHealthBar
+target9.name=heroexample
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=120
@@ -225,20 +171,5 @@ target9.y=0
 version=3.0.0
 width=1147
 world.lastInstantiated=AttackTest
-xPosition=352
-yPosition=208
->>>>>>> Stashed changes
-=======
-target9.height=70
-target9.name=MyWorld
-target9.showInterface=false
-target9.type=ClassTarget
-target9.width=120
-target9.x=0
-target9.y=0
-version=3.0.0
-width=1147
-world.lastInstantiated=AttackTest
-xPosition=91
-yPosition=242
->>>>>>> Attack-Bar-Combat
+xPosition=113
+yPosition=145
