@@ -58,6 +58,9 @@ public class PlayerBattleCharacter extends Actor
                         if (holster > 0) {
                             setImage("PlayerAttack" + holster + ".png");
                         }
+                        else {
+                            setImage("PlayerBattleIdle2.png");
+                        }
                         holster--;
                     }
                 }
