@@ -26,6 +26,7 @@ public class EnemyAttack extends Actor
         
         //checks if it has hit the end
         if(isTouching(Barrier.class)){
+            AttackTest.hero.health -= 10;
             getWorld().removeObject(this);
         }
         

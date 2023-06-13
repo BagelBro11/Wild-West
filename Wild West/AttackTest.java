@@ -18,6 +18,9 @@ public class AttackTest extends World
     //hero timer variable between two random numbers 
     int heroTimerTarget = getRandomNumber(100, 400);
     
+    //test
+    static heroexample hero = new heroexample();
+    static EnemyExample enemy = new EnemyExample();
     public void act(){
         enemyAttack();
         heroAttack();
@@ -34,10 +37,14 @@ public class AttackTest extends World
         //makes attack slider be above other objects 
         setPaintOrder(AttackSlider.class);
         
-        addObject(new AttackBar(), 450, 300);
-        addObject(new AttackSlider(), 450, 300);
-        addObject(new Barrier(), 200, 300);
-        addObject(click, 810, 307);
+        addObject(new AttackBar(), 450, 325);
+        addObject(new AttackSlider(), 450, 325);
+        addObject(new Barrier(), 200, 325);
+        addObject(click, 810, 332);
+        addObject(new HeroHealthBar(), 125, 25);
+        addObject(new EnemyHealthBar(), 775, 25);
+        hero = new heroexample();
+        enemy = new EnemyExample();
     }
     
     /**
@@ -47,7 +54,7 @@ public class AttackTest extends World
         enemyTimer++;
         if(enemyTimer > Greenfoot.getRandomNumber(4000)){
             enemyTimer = 0;
-            addObject(new EnemyAttack(), 700, 300);
+            addObject(new EnemyAttack(), 700, 325);
         }
     }
     
@@ -60,7 +67,7 @@ public class AttackTest extends World
             heroTimer = 0;
             heroTimerTarget = getRandomNumber(100, 400);
             int randX = getRandomNumber(200, 700);
-            addObject(new HeroAttack(), randX, 300);
+            addObject(new HeroAttack(), randX, 325);
         }
     }
    
