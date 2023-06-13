@@ -22,13 +22,13 @@ public class EnemyHealthBar extends Actor
         if (AttackTest.enemy.health > 75){
             setImage(img1);
         }
-        if (AttackTest.enemy.health > 50 && AttackTest.enemy.health < 75){
+        else if (AttackTest.enemy.health > 50 && AttackTest.enemy.health < 75){
             setImage(img2);
         }
-        if (AttackTest.enemy.health > 25 && (AttackTest.enemy.health < 50)){
+        else if (AttackTest.enemy.health > 25 && (AttackTest.enemy.health < 50)){
             setImage(img3);
         }
-        if (AttackTest.enemy.health < 25){
+        else if (AttackTest.enemy.health < 25){
             setImage(img4);
         }
     }

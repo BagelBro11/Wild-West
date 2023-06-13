@@ -10,7 +10,7 @@ public class AttackSlider extends Actor
 {
     //speed X variable
     int deltaX;
-    
+
     public AttackSlider(){
         //setting speed
         deltaX = 5;
@@ -40,7 +40,7 @@ public class AttackSlider extends Actor
 
         }
     }
-    
+
     /**
      * method which reads if the attack bar is touching any objects which would cause reprocussions
      */
@@ -51,15 +51,13 @@ public class AttackSlider extends Actor
         }
         else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
             AttackTest.enemy.health -= 10;
-            
-            System.out.println("Enemy" + AttackTest.enemy.health);
+
             removeTouching(HeroAttack.class);
         }
         else if(isTouching(AttackBar.class) && Greenfoot.mousePressed(AttackTest.click)){
-            
-            System.out.println("Hero" + AttackTest.hero.health);
+
             AttackTest.hero.health -= 5;
         }
-    
+
     }
 }
