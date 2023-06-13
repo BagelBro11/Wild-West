@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class AttackSlider extends Actor
 {
     //speed X variable
-    int deltaX;
+    double deltaX;
 
     public AttackSlider(){
         //setting speed
@@ -25,7 +25,7 @@ public class AttackSlider extends Actor
         // Add your action code here.
         bouncing();
         isHit();
-        setLocation(getX() + deltaX, getY());
+        setLocation(getX() + (int)deltaX, getY());
     }
 
     private void bouncing(){
