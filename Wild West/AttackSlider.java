@@ -13,7 +13,7 @@ public class AttackSlider extends Actor
 
     public AttackSlider(){
         //setting speed
-        deltaX = 5;
+        deltaX = 4;
     }
 
     /**
@@ -31,12 +31,12 @@ public class AttackSlider extends Actor
     private void bouncing(){
         //if touching left side of attack bar go other way
         if(getX() < 200){
-            deltaX = 5;
+            deltaX = (deltaX * -1);
 
         }
         //if touching right side of attack bar go other way
         if(getX() > 700){
-            deltaX = -5;
+            deltaX = (deltaX * -1);
 
         }
     }
@@ -47,15 +47,33 @@ public class AttackSlider extends Actor
     private void isHit(){
 
         if(isTouching(EnemyAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
+            if((deltaX < 0 )){
+                deltaX -= 1;
+            }
+            else{
+                deltaX += 1;
+            }
+
             removeTouching(EnemyAttack.class);
         }
         else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
+            if((deltaX < 0 )){
+                deltaX -= 1;
+            }
+            else{
+                deltaX += 1;
+            }
             AttackTest.enemy.health -= 10;
             ((AttackTest)getWorld()).attack = true;
             removeTouching(HeroAttack.class);
         }
         else if(isTouching(AttackBar.class) && Greenfoot.mousePressed(AttackTest.click)){
-
+            if((deltaX < 0 )){
+                deltaX = -4;
+            }
+            else{
+                deltaX = 4;
+            }
             AttackTest.hero.health -= 5;
         }
 
