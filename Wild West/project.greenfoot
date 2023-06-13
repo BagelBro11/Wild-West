@@ -5,9 +5,11 @@ class.AttackSlider.image=pixil-frame-0\ (2).png
 class.Barrier.image=pixil-frame-0\ (5).png
 class.ClickButton.image=pixil-frame-0\ (9).png
 class.EnemyAttack.image=pixil-frame-0\ (4).png
+class.HeroHealthBar.image=pixil-frame-0\ (10).png
 class.EnemyExample.image=hedgehog.png
 class.EnemyHealthBar.image=pixil-frame-0\ (14).png
 class.HeroAttack.image=pixil-frame-0\ (6).png
+
 
 
 class.HeroHealthBar.image=pixil-frame-0\ (10).png
@@ -173,4 +175,7 @@ width=1550
 world.lastInstantiated=AttackTest
 xPosition=0
 yPosition=0
+
+class.heroexample.image=hedgehog.png
+
 

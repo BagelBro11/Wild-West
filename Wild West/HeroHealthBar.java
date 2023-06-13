@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HeroHealthBar extends Actor
 {
-    
     GreenfootImage img1 = new GreenfootImage ("pixil-frame-0 (10).png");
     GreenfootImage img2 = new GreenfootImage ("pixil-frame-0 (11).png");
     GreenfootImage img3 = new GreenfootImage ("pixil-frame-0 (12).png");
@@ -34,5 +33,3 @@ public class HeroHealthBar extends Actor
         }
     }
 }
-
-
