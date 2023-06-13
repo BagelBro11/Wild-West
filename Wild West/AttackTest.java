@@ -19,8 +19,12 @@ public class AttackTest extends World
     int heroTimerTarget = getRandomNumber(100, 400);
     
     //test
-    static heroexample hero = new heroexample();
+    static PlayerBattleCharacter hero = new PlayerBattleCharacter();
     static EnemyExample enemy = new EnemyExample();
+    
+    // Battle variables
+    static boolean inBattle = false;
+    static boolean attack = false;
     public void act(){
         enemyAttack();
         heroAttack();
@@ -43,7 +47,7 @@ public class AttackTest extends World
         addObject(click, 810, 332);
         addObject(new HeroHealthBar(), 125, 25);
         addObject(new EnemyHealthBar(), 775, 25);
-        hero = new heroexample();
+        hero = new PlayerBattleCharacter();
         enemy = new EnemyExample();
     }
     
