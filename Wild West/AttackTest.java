@@ -11,6 +11,8 @@ public class AttackTest extends World
     //timers for each attack spawning on attack bar
     int enemyTimer = 0;
     int heroTimer = 0;
+    int backgroundTimer = 899;
+    boolean inBattle = false;
     
     //static variable for click button
     static ClickButton click = new ClickButton();
@@ -24,6 +26,12 @@ public class AttackTest extends World
     public void act(){
         enemyAttack();
         heroAttack();
+        //Infinity Background
+        backgroundTimer++;
+        if (backgroundTimer == 900 && inBattle == false){
+            backgroundTimer = 0;
+            addObject(new BackgroundImage(), 1350, 200);
+        }
     }
     
     /**
@@ -33,9 +41,9 @@ public class AttackTest extends World
     public AttackTest()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(900, 400, 1); 
+        super(900, 400, 1, false); 
         //makes attack slider be above other objects 
-        setPaintOrder(AttackSlider.class);
+        // setPaintOrder(AttackSlider.class, AttackBar.class, Barrier.class, click, HeroHealthBar.class);
         
         addObject(new AttackBar(), 450, 325);
         addObject(new AttackSlider(), 450, 325);
@@ -45,6 +53,7 @@ public class AttackTest extends World
         addObject(new EnemyHealthBar(), 775, 25);
         hero = new heroexample();
         enemy = new EnemyExample();
+        addObject(new BackgroundImage(), 450, 200);
     }
     
     /**
