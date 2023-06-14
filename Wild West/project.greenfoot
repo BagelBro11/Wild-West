@@ -1,8 +1,8 @@
 #Greenfoot project file
 class.AttackBar.image=pixil-frame-0\ (3).png
 class.AttackSlider.image=pixil-frame-0\ (2).png
-class.BackgroundImage.image=background\ image.gif
-class.BackgroundWorld.image=background\ image.gif
+class.BackgroundImage.image=recycpap.jpg
+class.BackgroundWorld.image=RealDessertNew.jpg
 class.Barrier.image=pixil-frame-0\ (5).png
 class.ClickButton.image=pixil-frame-0\ (9).png
 class.EnemyAttack.image=pixil-frame-0\ (4).png
