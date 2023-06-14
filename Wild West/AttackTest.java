@@ -24,17 +24,23 @@ public class AttackTest extends World
     static EnemyExample enemy = new EnemyExample();
 
     // Battle variables
-    static boolean inBattle = true;
+    static boolean inBattle = false;
     static boolean attack = false;
+    
     public void act(){
         enemyAttack();
         heroAttack();
         //Infinity Background
-        backgroundTimer++;
+        if(!inBattle){
+            backgroundTimer++;
+        }
+        
+        
         if (backgroundTimer == 900 && inBattle == false){
             backgroundTimer = 0;
             addObject(new BackgroundImage(), 1350, 200);
         }
+        
     }
 
     /**
