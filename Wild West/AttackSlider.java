@@ -9,8 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class AttackSlider extends Actor
 {
     //speed X variable
-    double deltaX;
-
+    public static double deltaX;
+    
     public AttackSlider(){
         //setting speed
         deltaX = 4;
