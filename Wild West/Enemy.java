@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemy extends Actor
 {
-    boolean attack = false;
     boolean drawGun = true;
     int drawAndShoot = 0;
     int holster = 14;
@@ -23,7 +22,7 @@ public class Enemy extends Actor
     public void act()
     {
         // Attack animation
-        if (attack == true) {
+        if (((AttackTest)getWorld()).enemyAttack == true) {
             imageDelay--;
             if (imageDelay == 0) {
                 imageDelay = shootDelayNum;
@@ -43,6 +42,9 @@ public class Enemy extends Actor
                     }
                     else {
                         setImage("EnemyIdle2.png");
+                        ((AttackTest)getWorld()).enemyAttack = false;
+                        drawGun = true;
+                        holster = 15;
                     }
                     holster--;
                 }
