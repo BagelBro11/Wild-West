@@ -56,6 +56,7 @@ public class AttackTest extends World
 
         addObject(new HeroHealthBar(), 125, 25);
         hero = new PlayerBattleCharacter();
+        addObject(hero, 150, 200);
         addObject(new BackgroundImage(), 450, 200);
         if(inBattle == true){
             addObject(new AttackBar(), 450, 325);
