@@ -38,8 +38,7 @@ public class PlayerBattleCharacter extends Actor
                     runAnimation = 0;
                 }
             }
-        } else {            
-
+        } else {  
             // Attack animation
             if (((AttackTest)getWorld()).attack == true) {
                 imageDelay--;
