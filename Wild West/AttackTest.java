@@ -12,7 +12,7 @@ public class AttackTest extends World
     int enemyTimer = 0;
     int heroTimer = 0;
     int backgroundTimer = 899;
-    boolean inBattle = false;
+    
     
     //static variable for click button
     static ClickButton click = new ClickButton();
