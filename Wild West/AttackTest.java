@@ -21,12 +21,13 @@ public class AttackTest extends World
 
     //test
     static PlayerBattleCharacter hero = new PlayerBattleCharacter();
-    static EnemyExample enemy = new EnemyExample();
+    static Enemy enemy = new Enemy();
 
     // Battle variables
-    static boolean inBattle = false;
-    static boolean attack = false;
-    static boolean enemyAttack = false;
+    boolean inBattle = false;
+    boolean attack = false;
+    boolean enemyAttack = false;
+    boolean attackClassesLoaded = false;
     public void act(){
         enemyAttack();
         heroAttack();
@@ -36,11 +37,22 @@ public class AttackTest extends World
         }
         
         
-        if (backgroundTimer == 900 && inBattle == false){
+        if (backgroundTimer == 900 && !inBattle){
             backgroundTimer = 0;
             addObject(new BackgroundImage(), 1350, 200);
         }
         
+        if(inBattle && !attackClassesLoaded){
+            addObject(new AttackBar(), 450, 325);
+            addObject(new AttackSlider(), 450, 325);
+            addObject(new Barrier(), 200, 325);
+            addObject(click, 810, 332);
+            addObject(new EnemyHealthBar(), 775, 25);
+
+            enemy = new Enemy();
+            
+            attackClassesLoaded = true;
+        }
     }
 
     /**
@@ -52,21 +64,14 @@ public class AttackTest extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 400, 1, false); 
         //makes attack slider be above other objects 
-        setPaintOrder(AttackSlider.class, EnemyAttack.class, HeroAttack.class, AttackBar.class, Barrier.class, HeroHealthBar.class, EnemyHealthBar.class, PlayerBattleCharacter.class, ClickButton.class, EnemyExample.class);
+        setPaintOrder(AttackSlider.class, EnemyAttack.class, HeroAttack.class, AttackBar.class, Barrier.class, HeroHealthBar.class, EnemyHealthBar.class, PlayerBattleCharacter.class, ClickButton.class, Enemy.class);
 
         addObject(new HeroHealthBar(), 125, 25);
         hero = new PlayerBattleCharacter();
         addObject(hero, 150, 200);
+        addObject(new Enemy(), 1200, 200);
         addObject(new BackgroundImage(), 450, 200);
-        if(inBattle == true){
-            addObject(new AttackBar(), 450, 325);
-            addObject(new AttackSlider(), 450, 325);
-            addObject(new Barrier(), 200, 325);
-            addObject(click, 810, 332);
-            addObject(new EnemyHealthBar(), 775, 25);
-
-            enemy = new EnemyExample();
-        }
+        
     }
 
     /**
