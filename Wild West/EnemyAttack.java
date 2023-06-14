@@ -22,11 +22,17 @@ public class EnemyAttack extends Actor
     {
         // Add your action code here.
         setLocation(getX() + deltaX, getY());
-
         
-        //checks if it has hit the end
+        
+        //checks if it has hit the end 
         if(isTouching(Barrier.class)){
             AttackTest.hero.health -= 10;
+            if(AttackSlider.deltaX > 0){
+                AttackSlider.deltaX = 4;
+            }
+            else{
+                AttackSlider.deltaX = -4;
+            }
             getWorld().removeObject(this);
         }
         

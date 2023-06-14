@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PlayerBattleCharacter extends Actor
 {
-    boolean attack = true;
     boolean inBattle = false;
     boolean drawGun = true;
     int runAnimation = 0;
@@ -19,6 +18,8 @@ public class PlayerBattleCharacter extends Actor
     int shootDelayNum = 3;
     int idleDelayNum = 15;
     int imageDelay = 1;
+    
+    int health = 100;
     /**
      * Act - do whatever the PlayerBattleCharacter wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -26,7 +27,7 @@ public class PlayerBattleCharacter extends Actor
     public void act()
     {
         // Run animation
-        if (inBattle == false) {
+        if (((AttackTest)getWorld()).inBattle == false) {
             imageDelay--;
             if (imageDelay == 0) {
                 imageDelay = runDelayNum;
@@ -40,7 +41,7 @@ public class PlayerBattleCharacter extends Actor
         } else {            
 
             // Attack animation
-            if (attack == true) {
+            if (((AttackTest)getWorld()).attack == true) {
                 imageDelay--;
                 if (imageDelay == 0) {
                     imageDelay = shootDelayNum;
@@ -60,6 +61,9 @@ public class PlayerBattleCharacter extends Actor
                         }
                         else {
                             setImage("PlayerBattleIdle2.png");
+                            ((AttackTest)getWorld()).attack = false;
+                            drawGun = true;
+                            holster = 15;
                         }
                         holster--;
                     }
