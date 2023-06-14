@@ -15,9 +15,9 @@ public class BackgroundImage extends Actor
     public void act()
     {
         // Add your action code here.
+        AttackTest world = (AttackTest)getWorld();
+        if(!world.inBattle){
         setLocation(getX() -1, getY());
-        // if (getX() == 449){
-            // getWorld(new MyWorld());
-        // }
+    }
     }
 }
