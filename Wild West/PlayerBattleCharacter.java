@@ -19,6 +19,8 @@ public class PlayerBattleCharacter extends Actor
     int shootDelayNum = 3;
     int idleDelayNum = 15;
     int imageDelay = 1;
+    
+    int health = 100;
     /**
      * Act - do whatever the PlayerBattleCharacter wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -37,8 +39,7 @@ public class PlayerBattleCharacter extends Actor
                     runAnimation = 0;
                 }
             }
-        } else {            
-
+        } else {  
             // Attack animation
             if (attack == true) {
                 imageDelay--;
