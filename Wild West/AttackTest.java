@@ -24,7 +24,7 @@ public class AttackTest extends World
     static EnemyExample enemy = new EnemyExample();
 
     // Battle variables
-    static boolean inBattle = true;
+    static boolean inBattle = false;
     static boolean attack = false;
     
     public void act(){
