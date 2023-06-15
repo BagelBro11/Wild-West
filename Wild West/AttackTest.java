@@ -69,7 +69,7 @@ public class AttackTest extends World
         addObject(new HeroHealthBar(), 125, 25);
         hero = new PlayerBattleCharacter();
         addObject(hero, 150, 200);
-        addObject(enemy, 1200, 200);
+        addObject(new Enemy(), 1200, 200);
         addObject(new BackgroundImage(), 450, 200);
         
     }
