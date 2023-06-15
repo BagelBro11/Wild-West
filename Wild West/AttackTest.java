@@ -20,8 +20,8 @@ public class AttackTest extends World
     int heroTimerTarget = getRandomNumber(100, 400);
 
     //test
-    static PlayerBattleCharacter hero = new PlayerBattleCharacter();
-    static Enemy enemy = new Enemy();
+    static PlayerBattleCharacter hero;
+    static Enemy enemy;
 
     // Battle variables
     boolean inBattle = false;
@@ -34,24 +34,19 @@ public class AttackTest extends World
         //Infinity Background
         if(!inBattle){
             backgroundTimer++;
-        }
-        
-        
-        if (backgroundTimer == 900 && !inBattle){
-            backgroundTimer = 0;
-            addObject(new BackgroundImage(), 1350, 200);
-        }
-        
-        if(inBattle && !attackClassesLoaded){
+        } else if (inBattle && !attackClassesLoaded){
             addObject(new AttackBar(), 450, 325);
             addObject(new AttackSlider(), 450, 325);
             addObject(new Barrier(), 200, 325);
             addObject(click, 810, 332);
             addObject(new EnemyHealthBar(), 775, 25);
-
-            enemy = new Enemy();
             
             attackClassesLoaded = true;
+        }
+        
+        if (backgroundTimer == 900 && !inBattle){
+            backgroundTimer = 0;
+            addObject(new BackgroundImage(), 1350, 200);
         }
     }
 
@@ -69,7 +64,8 @@ public class AttackTest extends World
         addObject(new HeroHealthBar(), 125, 25);
         hero = new PlayerBattleCharacter();
         addObject(hero, 150, 200);
-        addObject(new Enemy(), 1200, 200);
+        enemy = new Enemy();
+        addObject(enemy, 1200, 200);
         addObject(new BackgroundImage(), 450, 200);
         
     }

@@ -15,7 +15,7 @@ public class Enemy extends Actor
     int shootDelayNum = 3;
     int idleDelayNum = 15;
     int imageDelay = 1;
-    
+
     int health = 100;
     /**
      * Act - do whatever the Enemy wants to do. This method is called whenever
@@ -68,6 +68,22 @@ public class Enemy extends Actor
                     }
                 }
             }
+        }
+
+        endBattle();
+    }
+
+    private void endBattle() {
+        if (AttackTest.enemy.health <= 0) {
+            ((AttackTest)getWorld()).inBattle = false;
+            removeAttackClasses();
+        }
+    }
+
+    private void removeAttackClasses() {
+        Class names[] = {AttackBar.class, AttackSlider.class, Barrier.class, ClickButton.class, EnemyAttack.class, HeroAttack.class, EnemyHealthBar.class, Enemy.class};
+        for (int i = 0; i < names.length; i++) {
+            getWorld().removeObjects(getWorld().getObjects(names[i]));
         }
     }
 }
