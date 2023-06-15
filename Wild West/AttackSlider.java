@@ -10,7 +10,8 @@ public class AttackSlider extends Actor
 {
     //speed X variable
     public static double deltaX;
-    
+    boolean moveRight = true;
+
     public AttackSlider(){
         //setting speed
         deltaX = 4;
@@ -25,19 +26,21 @@ public class AttackSlider extends Actor
         // Add your action code here.
         bouncing();
         isHit();
-        setLocation(getX() + (int)deltaX, getY());
+        if (moveRight) {
+            setLocation(getX() + (int)deltaX, getY());
+        } else {
+            setLocation(getX() - (int)deltaX, getY());
+        }
     }
 
     private void bouncing(){
         //if touching left side of attack bar go other way
         if(getX() < 200){
-            deltaX = (deltaX * -1);
-
+            moveRight = true;
         }
         //if touching right side of attack bar go other way
         if(getX() > 700){
-            deltaX = (deltaX * -1);
-
+            moveRight = false;
         }
     }
 
@@ -45,35 +48,21 @@ public class AttackSlider extends Actor
      * method which reads if the attack bar is touching any objects which would cause reprocussions
      */
     private void isHit(){
-
         if(isTouching(EnemyAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
-            if((deltaX < 0 )){
-                deltaX -= 1;
-            }
-            else{
-                deltaX += 1;
-            }
+            deltaX += 1;
 
             removeTouching(EnemyAttack.class);
         }
         else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
-            if((deltaX < 0 )){
-                deltaX -= 1;
-            }
-            else{
-                deltaX += 1;
-            }
+            deltaX += 1;
+            
             AttackTest.enemy.health -= 10;
             ((AttackTest)getWorld()).attack = true;
             removeTouching(HeroAttack.class);
         }
         else if(isTouching(AttackBar.class) && Greenfoot.mousePressed(AttackTest.click)){
-            if((deltaX < 0 )){
-                deltaX = -4;
-            }
-            else{
-                deltaX = 4;
-            }
+            deltaX = 4;
+            
             AttackTest.hero.health -= 5;
         }
 
