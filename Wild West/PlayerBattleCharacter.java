@@ -19,13 +19,19 @@ public class PlayerBattleCharacter extends Actor
     int idleDelayNum = 15;
     int imageDelay = 1;
     
-    int health = 100;
+    int health = 250;
     /**
      * Act - do whatever the PlayerBattleCharacter wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
+        
+        //Losing condition
+        if(health == 0){
+            Greenfoot.setWorld(new LoseScreen());
+        }
+       
         // Run animation
         if (((AttackTest)getWorld()).inBattle == false) {
             imageDelay--;
