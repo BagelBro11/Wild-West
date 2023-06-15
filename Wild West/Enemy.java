@@ -23,6 +23,7 @@ public class Enemy extends Actor
      */
     public void act()
     {
+        
         if (getX() <= 750) {
             ((AttackTest)getWorld()).inBattle = true;
         }

@@ -26,6 +26,12 @@ public class PlayerBattleCharacter extends Actor
      */
     public void act()
     {
+        
+        //Losing condition
+        if(health == 0){
+            Greenfoot.setWorld(new LoseScreen());
+        }
+       
         // Run animation
         if (((AttackTest)getWorld()).inBattle == false) {
             imageDelay--;
