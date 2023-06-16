@@ -15,3 +15,4 @@ class.LoseScreen.image=LoseScreenNew.png
 class.PlayerBattleCharacter.image=PlayerWalk4.png
 class.RedoButton.image=RedoButton.png
 class.StartButton.image=StartButton.jpg
+class.WinScreen.image=image.jpg

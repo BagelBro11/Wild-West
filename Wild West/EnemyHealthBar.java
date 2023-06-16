@@ -8,10 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EnemyHealthBar extends Actor
 {
-    GreenfootImage img1 = new GreenfootImage ("pixil-frame-0 (14).png");
-    GreenfootImage img2 = new GreenfootImage ("pixil-frame-0 (15).png");
-    GreenfootImage img3 = new GreenfootImage ("pixil-frame-0 (16).png");
-    GreenfootImage img4 = new GreenfootImage ("pixil-frame-0 (17).png");
+    String images[] = {"pixil-frame-0 (14).png","pixil-frame-0 (15).png","pixil-frame-0 (16).png","pixil-frame-0 (17).png"};
     /**
      * Act - do whatever the EnemyHealthBar wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -21,16 +18,16 @@ public class EnemyHealthBar extends Actor
         // Add your action code here.
         Enemy enemy = ((AttackTest)getWorld()).enemies[((AttackTest)getWorld()).lastEnemyInWorld];
         if (enemy.health > 75){
-            setImage(img1);
+            setImage(images[0]);
         }
         else if (enemy.health > 50 && enemy.health < 75){
-            setImage(img2);
+            setImage(images[1]);
         }
         else if (enemy.health > 25 && (enemy.health < 50)){
-            setImage(img3);
+            setImage(images[2]);
         }
         else if (enemy.health < 25){
-            setImage(img4);
+            setImage(images[3]);
         }
     }
 }
