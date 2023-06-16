@@ -28,7 +28,7 @@ public class PlayerBattleCharacter extends Actor
     {
         
         //Losing condition
-        if(health == 0){
+        if(health <= 0){
             Greenfoot.setWorld(new LoseScreen());
         }
        
