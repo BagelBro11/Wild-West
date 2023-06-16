@@ -16,16 +16,17 @@ public class EnemyHealthBar extends Actor
     public void act()
     {
         // Add your action code here.
-        if (AttackTest.enemy.health > 75){
+        Enemy enemy = ((AttackTest)getWorld()).enemies[((AttackTest)getWorld()).lastEnemyInWorld];
+        if (enemy.health > 75){
             setImage(images[0]);
         }
-        else if (AttackTest.enemy.health > 50 && AttackTest.enemy.health < 75){
+        else if (enemy.health > 50 && enemy.health < 75){
             setImage(images[1]);
         }
-        else if (AttackTest.enemy.health > 25 && (AttackTest.enemy.health < 50)){
+        else if (enemy.health > 25 && (enemy.health < 50)){
             setImage(images[2]);
         }
-        else if (AttackTest.enemy.health < 25){
+        else if (enemy.health < 25){
             setImage(images[3]);
         }
     }
