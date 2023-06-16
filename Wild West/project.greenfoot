@@ -14,6 +14,7 @@ class.IntroScreen.image=WildWest.jpg
 class.Level2Image.image=pixil-frame-0\ (21).png
 class.LoseScreen.image=LoseScreenNew.png
 class.PlayerBattleCharacter.image=PlayerWalk4.png
+class.RedoButton.image=RedoButton.png
 class.StartButton.image=StartButton.jpg
 dependency1.from=BackgroundWorld
 dependency1.to=BackgroundImage
