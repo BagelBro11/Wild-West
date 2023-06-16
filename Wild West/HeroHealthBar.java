@@ -16,16 +16,16 @@ public class HeroHealthBar extends Actor
     public void act()
     {
         // Add your action code here.
-        if (AttackTest.hero.health > 75){
+        if (AttackTest.hero.health > 375){
             setImage(images[0]);
         }
-        else if (AttackTest.hero.health > 50 && AttackTest.hero.health < 75){
+        else if (AttackTest.hero.health > 250 && AttackTest.hero.health < 375){
             setImage(images[1]);
         }
-        else if (AttackTest.hero.health > 25 && (AttackTest.hero.health < 50)){
+        else if (AttackTest.hero.health > 125 && (AttackTest.hero.health < 250)){
             setImage(images[2]);
         }
-        else if (AttackTest.hero.health < 25){
+        else if (AttackTest.hero.health < 125){
             setImage(images[3]);
         }
     }
