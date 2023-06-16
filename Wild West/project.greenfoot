@@ -14,6 +14,7 @@ class.IntroScreen.image=WildWest.jpg
 class.LoseScreen.image=LoseScreenNew.png
 class.PlayerBattleCharacter.image=PlayerWalk4.png
 class.StartButton.image=StartButton.jpg
+
 dependency1.from=BackgroundWorld
 dependency1.to=BackgroundImage
 dependency1.type=UsesDependency
@@ -289,4 +290,6 @@ version=3.0.0
 width=1550
 world.lastInstantiated=IntroScreen
 xPosition=0
-yPosition=0
+yPosition
+class.WinScreen.image=image.jpg
+

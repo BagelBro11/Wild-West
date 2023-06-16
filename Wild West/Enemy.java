@@ -23,11 +23,6 @@ public class Enemy extends Actor
      */
     public void act()
     {
-        //Winning condition
-        if(health == 0){
-            Greenfoot.setWorld(new WinScreen());
-        }
-        
         if (getX() <= 750) {
             ((AttackTest)getWorld()).inBattle = true;
         }
@@ -79,8 +74,11 @@ public class Enemy extends Actor
     }
 
     private void endBattle() {
-        if (AttackTest.enemy.health <= 0) {
+        if (health <= 0) {
             ((AttackTest)getWorld()).inBattle = false;
+            ((AttackTest)getWorld()).attackClassesLoaded = false;
+            ((AttackTest)getWorld()).addNewEnemy = true;
+            ((AttackTest)getWorld()).lastEnemyInWorld++;
             removeAttackClasses();
         }
     }
