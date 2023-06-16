@@ -21,16 +21,23 @@ public class AttackTest extends World
 
     //test
     static PlayerBattleCharacter hero;
-    static Enemy enemy;
+    static Enemy[] enemies = new Enemy[6];
 
     // Battle variables
     boolean inBattle = false;
     boolean attack = false;
     boolean enemyAttack = false;
     boolean attackClassesLoaded = false;
+    boolean addNewEnemy = true;
+    
+    int lastEnemyInWorld = 0;
     public void act(){
         enemyAttack();
         heroAttack();
+        if (addNewEnemy == true && lastEnemyInWorld < 6) {
+            addObject(enemies[lastEnemyInWorld], 1200, 200);
+            addNewEnemy = false;
+        }
         //Infinity Background
         if(!inBattle){
             backgroundTimer++;
@@ -64,10 +71,11 @@ public class AttackTest extends World
         addObject(new HeroHealthBar(), 125, 25);
         hero = new PlayerBattleCharacter();
         addObject(hero, 150, 200);
-        enemy = new Enemy();
-        addObject(enemy, 1200, 200);
         addObject(new BackgroundImage(), 450, 200);
         
+        for (int i = 0; i < enemies.length; i++) {
+            enemies[i] = new Enemy();
+        }
     }
 
     /**

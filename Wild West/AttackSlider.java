@@ -55,8 +55,8 @@ public class AttackSlider extends Actor
         }
         else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
             deltaX += 1;
-            
-            AttackTest.enemy.health -= 10;
+            Enemy enemy = ((AttackTest)getWorld()).enemies[((AttackTest)getWorld()).lastEnemyInWorld];
+            enemy.health -= 10;
             ((AttackTest)getWorld()).attack = true;
             removeTouching(HeroAttack.class);
         }
