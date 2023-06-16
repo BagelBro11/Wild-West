@@ -19,7 +19,7 @@ public class PlayerBattleCharacter extends Actor
     int idleDelayNum = 15;
     int imageDelay = 1;
     
-    int health = 250;
+    int health = 500;
     /**
      * Act - do whatever the PlayerBattleCharacter wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
