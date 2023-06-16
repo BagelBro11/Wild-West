@@ -16,6 +16,23 @@ public class WinScreen extends World
     public WinScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(590, 320, 1); 
+
+        prepare();
+    }
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        RedoButton redoButton = new RedoButton();
+        addObject(redoButton,295,286);
+        redoButton.setLocation(295,286);
     }
 }
