@@ -14,6 +14,10 @@ public class BackgroundImage2 extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        // Move left if the player is not in a battle
+        AttackTest world = (AttackTest)getWorld();
+        if(!world.inBattle){
+            setLocation(getX() -1, getY());
+        }
     }
 }
