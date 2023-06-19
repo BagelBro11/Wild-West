@@ -29,34 +29,44 @@ public class AttackTest extends World
     boolean enemyAttack = false;
     boolean attackClassesLoaded = false;
     boolean addNewEnemy = true;
-    
+
     int lastEnemyInWorld = 0;
     int level = 1;
     public void act(){
         enemyAttack();
         heroAttack();
+        
+        // Check to see if a new enemy needs to be added
         if (addNewEnemy == true && lastEnemyInWorld < 6) {
             addObject(enemies[lastEnemyInWorld], 1200, 200);
             addNewEnemy = false;
         }
-        //Infinity Background
+
         if(!inBattle){
+            // Increase background timer when not in a battle
             backgroundTimer++;
         } else if (inBattle && !attackClassesLoaded){
+            // Load battle classes once the battle has started
             addObject(new AttackBar(), 450, 325);
             addObject(new AttackSlider(), 450, 325);
             addObject(new Barrier(), 200, 325);
             addObject(click, 810, 332);
             addObject(new EnemyHealthBar(), 775, 25);
-            
+
             attackClassesLoaded = true;
         }
-        
+
+        //Infinity Background
         if (backgroundTimer == 900 && !inBattle){
             backgroundTimer = 0;
-            addObject(new BackgroundImage(), 1350, 200);
+            // Choose what background image to display based on the level
+            if (level == 1) {
+                addObject(new BackgroundImage(), 1350, 200);
+            } else {
+                addObject(new BackgroundImage2(), 1350, 200);
+            }
         }
-        
+
         // Check if 3 enemies have been defeated
         // If fewer than 3 enemies have been defeated, it is still level 1
         // If more than 3 or 3 enemies have been defeated, it is level 2
@@ -80,7 +90,7 @@ public class AttackTest extends World
         hero = new PlayerBattleCharacter();
         addObject(hero, 150, 200);
         addObject(new BackgroundImage(), 450, 200);
-        
+
         for (int i = 0; i < enemies.length; i++) {
             enemies[i] = new Enemy();
         }
@@ -112,7 +122,7 @@ public class AttackTest extends World
                 addObject(new HeroAttack(), randX, 325);
             }
         }
-        }
+    }
 
     /**
      * clearer random number method to specify parameters 
