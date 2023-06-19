@@ -16,7 +16,7 @@ public class Enemy extends Actor
     int idleDelayNum = 15;
     int imageDelay = 1;
 
-    int health = 100;
+    int health = 10;
     /**
      * Act - do whatever the Enemy wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

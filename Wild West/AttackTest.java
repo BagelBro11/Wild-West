@@ -31,7 +31,7 @@ public class AttackTest extends World
     boolean addNewEnemy = true;
 
     int lastEnemyInWorld = 0;
-    int level = 1;
+    static int level = 1;
     public void act(){
         enemyAttack();
         heroAttack();
