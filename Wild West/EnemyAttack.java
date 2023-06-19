@@ -9,7 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class EnemyAttack extends Actor
 {
     int deltaX;
-
     public EnemyAttack(){
         deltaX = -3;
     }
@@ -20,9 +19,10 @@ public class EnemyAttack extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        // Move
         setLocation(getX() + deltaX, getY());
-        
+        // Change image for each level
+        setImage("EnemyAttack" + ((AttackTest)getWorld()).level + ".png");
         
         //checks if it has hit the end 
         if(isTouching(Barrier.class)){
