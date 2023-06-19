@@ -23,7 +23,7 @@ public class AttackSlider extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        //Code to move it from side to side
         bouncing();
         isHit();
         if (moveRight) {
@@ -52,18 +52,22 @@ public class AttackSlider extends Actor
             deltaX += 1;
 
             removeTouching(EnemyAttack.class);
+            //speed boost if clicked and removal
         }
         else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
             deltaX += 1;
             Enemy enemy = ((AttackTest)getWorld()).enemies[((AttackTest)getWorld()).lastEnemyInWorld];
             enemy.health -= 10;
+            //Hero damage
             ((AttackTest)getWorld()).attack = true;
             removeTouching(HeroAttack.class);
+            //speed boost if clicked and removal
         }
         else if(isTouching(AttackBar.class) && Greenfoot.mousePressed(AttackTest.click)){
             deltaX = 4;
             
             AttackTest.hero.health -= 5;
+            //Enemy damage
         }
 
     }

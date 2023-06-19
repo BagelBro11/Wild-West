@@ -18,6 +18,7 @@ public class LoseScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(530, 300, 1); 
         prepare();
+        //Sent to this world from attack test after no health left
     }
     /**
      * Prepare the world for the start of the program.
@@ -31,5 +32,6 @@ public class LoseScreen extends World
         redoButton.setLocation(286,265);
         redoButton.setLocation(295,168);
         redoButton.setLocation(279,132);
+        //Redo button for after they lose if they wanna redo
     }
 }

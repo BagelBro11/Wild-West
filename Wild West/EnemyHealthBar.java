@@ -15,7 +15,7 @@ public class EnemyHealthBar extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        //Health bar lowers hearts as damge is delt
         Enemy enemy = ((AttackTest)getWorld()).enemies[((AttackTest)getWorld()).lastEnemyInWorld];
         if (enemy.health > 75){
             setImage(images[0]);

@@ -35,7 +35,7 @@ public class AttackTest extends World
     public void act(){
         enemyAttack();
         heroAttack();
-        
+
         // Check to see if a new enemy needs to be added
         if (addNewEnemy == true && lastEnemyInWorld < 6) {
             addObject(enemies[lastEnemyInWorld], 1200, 200);
@@ -83,7 +83,7 @@ public class AttackTest extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 400, 1, false); 
-        //makes attack slider be above other objects 
+        //Creates images in front of background and slider in correct location 
         setPaintOrder(AttackSlider.class, EnemyAttack.class, HeroAttack.class, AttackBar.class, Barrier.class, HeroHealthBar.class, EnemyHealthBar.class, PlayerBattleCharacter.class, ClickButton.class, Enemy.class);
 
         addObject(new HeroHealthBar(), 125, 25);
@@ -100,6 +100,7 @@ public class AttackTest extends World
      * method which randomly controls the NPC attack 
      */
     private void enemyAttack(){
+        // Checks to see if battle is true for scroll to occur
         if(inBattle == true){
             enemyTimer++;
             if(enemyTimer > Greenfoot.getRandomNumber(4000)){
@@ -120,6 +121,7 @@ public class AttackTest extends World
                 heroTimerTarget = getRandomNumber(100, 400);
                 int randX = getRandomNumber(200, 700);
                 addObject(new HeroAttack(), randX, 325);
+                //Hero attack button
             }
         }
     }
@@ -130,5 +132,6 @@ public class AttackTest extends World
     public int getRandomNumber(int start, int end){
         int normal = Greenfoot.getRandomNumber(end - start +1);
         return normal + start;
+        
     }
 }
