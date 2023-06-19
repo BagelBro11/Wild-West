@@ -57,6 +57,9 @@ public class AttackTest extends World
             addObject(new BackgroundImage(), 1350, 200);
         }
         
+        // Check if 3 enemies have been defeated
+        // If fewer than 3 enemies have been defeated, it is still level 1
+        // If more than 3 or 3 enemies have been defeated, it is level 2
         if (lastEnemyInWorld == 3) {
             level = 2;
         }
