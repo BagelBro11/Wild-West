@@ -23,57 +23,91 @@ public class Enemy extends Actor
      */
     public void act()
     {
+        startBattle();
+        move();
+        endBattle();
+    }
+
+    private void startBattle() {
         if (getX() <= 750) {
             ((AttackTest)getWorld()).inBattle = true;
         }
+    }
+
+    private void move() {
         if (!((AttackTest)getWorld()).inBattle) {
             move(-1);
         } else {
             // Attack animation
-            if (((AttackTest)getWorld()).enemyAttack == true) {
-                imageDelay--;
-                if (imageDelay == 0) {
-                    imageDelay = shootDelayNum;
-                    // Draw weapon and shoot
-                    if (drawGun == true) {
-                        drawAndShoot++;
-                        if (drawAndShoot <= 22) {
-                            setImage("Enemy" + ((AttackTest)getWorld()).level + "Attack" + drawAndShoot + ".png");
-                            if (drawAndShoot == 22) {
-                                drawAndShoot = 0;
-                                drawGun = false;
-                            }
-                        }
-                    } else {
-                        if (holster > 0) {
-                            setImage("Enemy" + ((AttackTest)getWorld()).level + "Attack" + holster + ".png");
-                        }
-                        else {
-                            setImage("Enemy" + ((AttackTest)getWorld()).level + "Idle2.png");
-                            ((AttackTest)getWorld()).enemyAttack = false;
-                            drawGun = true;
-                            holster = 15;
-                        }
-                        holster--;
+            animations();
+        }
+    }
+
+    private void animations() {
+        if (((AttackTest)getWorld()).enemyAttack == true) {
+            // Attack
+            attack();
+        } else {
+            // Idle
+            idle();
+        }
+    }
+
+    private void attack() {
+        // imageDelay counts down to zero to change the image
+        imageDelay--;
+        if (imageDelay == 0) {
+            // Reset imageDelay
+            imageDelay = shootDelayNum;
+            if (drawGun == true) { // Draw the gun and shoot
+                // Add one to drawAndShoot to change the image every time
+                drawAndShoot++;
+                if (drawAndShoot <= 22) {
+                    setImage("Enemy" + ((AttackTest)getWorld()).level + "Attack" + drawAndShoot + ".png");
+                    if (drawAndShoot == 22) {
+                        // Reset value for the next time the animation is run
+                        drawAndShoot = 0;
+                        // Set drawGun to false to run the holster animation
+                        drawGun = false;
                     }
                 }
-            } else {
-                imageDelay--;
-                if (imageDelay == 0) {
-                    imageDelay = idleDelayNum;
-                    idle++;
-                    setImage("Enemy" + ((AttackTest)getWorld()).level + "Idle" + idle + ".png");
-                    if (idle == 2){
-                        idle = 0;
-                    }
+            } else { // Holster the gun
+                if (holster > 0) {
+                    setImage("Enemy" + ((AttackTest)getWorld()).level + "Attack" + holster + ".png");
                 }
+                else {
+                    // Reset values and start the idle animation
+                    setImage("Enemy" + ((AttackTest)getWorld()).level + "Idle2.png");
+                    ((AttackTest)getWorld()).enemyAttack = false;
+                    drawGun = true;
+                    holster = 15;
+                }
+                // Change the value of holster to change what the image will be set to
+                holster--;
             }
         }
+    }
 
-        endBattle();
+    private void idle() {
+        // imageDelay counts down to zero to change the image
+        imageDelay--;
+        if (imageDelay == 0) {
+            // Reset imageDelay
+            imageDelay = idleDelayNum;
+            // Add one to idle to change the image that will be set
+            idle++;
+            // Set the image
+            setImage("Enemy" + ((AttackTest)getWorld()).level + "Idle" + idle + ".png");
+            // Reset idle if it has reached its max
+            if (idle == 2){
+                idle = 0;
+            }
+        }
     }
 
     private void endBattle() {
+        // Check if the enemy has any health left
+        // If not, remove all classes associated with the battle and add one to the enemy count
         if (health <= 0) {
             ((AttackTest)getWorld()).inBattle = false;
             ((AttackTest)getWorld()).attackClassesLoaded = false;
@@ -84,7 +118,9 @@ public class Enemy extends Actor
     }
 
     private void removeAttackClasses() {
+        // Store all classes that need to be removed in an array
         Class names[] = {AttackBar.class, AttackSlider.class, Barrier.class, ClickButton.class, EnemyAttack.class, HeroAttack.class, EnemyHealthBar.class, Enemy.class};
+        // Remove all classes by going through the array
         for (int i = 0; i < names.length; i++) {
             getWorld().removeObjects(getWorld().getObjects(names[i]));
         }
