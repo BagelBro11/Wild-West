@@ -38,7 +38,7 @@ public class Enemy extends Actor
                     if (drawGun == true) {
                         drawAndShoot++;
                         if (drawAndShoot <= 22) {
-                            setImage("EnemyAttack" + drawAndShoot + ".png");
+                            setImage("Enemy" + ((AttackTest)getWorld()).level + "Attack" + drawAndShoot + ".png");
                             if (drawAndShoot == 22) {
                                 drawAndShoot = 0;
                                 drawGun = false;
@@ -46,10 +46,10 @@ public class Enemy extends Actor
                         }
                     } else {
                         if (holster > 0) {
-                            setImage("EnemyAttack" + holster + ".png");
+                            setImage("Enemy" + ((AttackTest)getWorld()).level + "Attack" + holster + ".png");
                         }
                         else {
-                            setImage("EnemyIdle2.png");
+                            setImage("Enemy" + ((AttackTest)getWorld()).level + "Idle2.png");
                             ((AttackTest)getWorld()).enemyAttack = false;
                             drawGun = true;
                             holster = 15;
@@ -62,7 +62,7 @@ public class Enemy extends Actor
                 if (imageDelay == 0) {
                     imageDelay = idleDelayNum;
                     idle++;
-                    setImage("EnemyIdle" + idle + ".png");
+                    setImage("Enemy" + ((AttackTest)getWorld()).level + "Idle" + idle + ".png");
                     if (idle == 2){
                         idle = 0;
                     }
