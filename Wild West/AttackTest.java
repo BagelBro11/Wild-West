@@ -31,6 +31,7 @@ public class AttackTest extends World
     boolean addNewEnemy = true;
     
     int lastEnemyInWorld = 0;
+    int level = 1;
     public void act(){
         enemyAttack();
         heroAttack();
@@ -54,6 +55,10 @@ public class AttackTest extends World
         if (backgroundTimer == 900 && !inBattle){
             backgroundTimer = 0;
             addObject(new BackgroundImage(), 1350, 200);
+        }
+        
+        if (lastEnemyInWorld == 3) {
+            level = 2;
         }
     }
 
