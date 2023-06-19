@@ -15,7 +15,7 @@ public class HeroHealthBar extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        //Health hearts are lowered as hero loses health
         if (AttackTest.hero.health > 375){
             setImage(images[0]);
         }

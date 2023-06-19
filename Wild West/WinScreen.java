@@ -19,6 +19,7 @@ public class WinScreen extends World
         super(590, 320, 1); 
 
         prepare();
+        //Sent to win world after all enemys are killed
     }
     /**
      * Prepare the world for the start of the program.
@@ -34,5 +35,6 @@ public class WinScreen extends World
         RedoButton redoButton = new RedoButton();
         addObject(redoButton,295,286);
         redoButton.setLocation(295,286);
+        //Redo if they wanna play again
     }
 }
