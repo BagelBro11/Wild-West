@@ -17,6 +17,10 @@ public class Enemy extends Actor
     int imageDelay = 1;
 
     int health = 100;
+    public void addedToWorld(World AttackTest) {
+        setImage("Enemy" + ((AttackTest)getWorld()).level + "Idle2.png");
+    }
+    
     /**
      * Act - do whatever the Enemy wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
