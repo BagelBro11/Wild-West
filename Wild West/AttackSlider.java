@@ -32,6 +32,10 @@ public class AttackSlider extends Actor
             setLocation(getX() - (int)deltaX, getY());
         }
     }
+    
+    public void addedToWorld(World AttackTest) {
+        setImage("AttackSlider.png");
+    }
 
     private void bouncing(){
         //if touching left side of attack bar go other way

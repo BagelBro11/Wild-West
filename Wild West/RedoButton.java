@@ -14,8 +14,13 @@ public class RedoButton extends Actor
      */
     public void act()
     {
+        // Send to attack test
         if(Greenfoot.mousePressed(this)){
             Greenfoot.setWorld(new AttackTest());
-        }    }
-        // Send to attack test
+        }    
+    }
+
+    public void addedToWorld(World LoseScreen) {
+        setImage("RedoButton.png");
+    }
 }

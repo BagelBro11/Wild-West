@@ -16,4 +16,8 @@ public class ClickButton extends Actor
     {
         // Add your action code here.
     }
+    
+    public void addedToWorld(World AttackTest) {
+        setImage("ClickButton.png");
+    }
 }

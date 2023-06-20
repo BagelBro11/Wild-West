@@ -21,11 +21,7 @@ public class WinScreen extends World
         prepare();
         //Sent to win world after all enemys are killed
     }
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -35,6 +31,7 @@ public class WinScreen extends World
         RedoButton redoButton = new RedoButton();
         addObject(redoButton,295,286);
         redoButton.setLocation(295,286);
+        setBackground("WinScreen.jpg");
         //Redo if they wanna play again
     }
 }

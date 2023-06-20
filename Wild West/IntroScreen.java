@@ -18,6 +18,7 @@ public class IntroScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(512, 512, 1); 
         addObject(new StartButton(), 187, 239);
+        setBackground("WildWest.jpg");
         //Sends to attack test to play game
     }
 }

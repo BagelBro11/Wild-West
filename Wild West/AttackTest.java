@@ -59,6 +59,7 @@ public class AttackTest extends World
         //Infinity Background
         if (backgroundTimer == 900 && !inBattle){
             backgroundTimer = 0;
+            // Choose what background image to display based on the level
             addObject(new BackgroundImage(), 1350, 200);
         }
 
