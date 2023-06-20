@@ -20,7 +20,7 @@ public class RedoButton extends Actor
         }    
     }
 
-    public void addedToWorld(World LoseScreen) {
+    public void addedToWorld(World World) {
         setImage("RedoButton.png");
     }
 }
