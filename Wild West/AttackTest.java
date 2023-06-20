@@ -12,6 +12,7 @@ public class AttackTest extends World
     int enemyTimer = 0;
     int heroTimer = 0;
     int backgroundTimer = 899;
+    int throwawayTimer = 0;
 
     //static variable for click button
     static ClickButton click = new ClickButton();
@@ -22,7 +23,7 @@ public class AttackTest extends World
     //test
     static PlayerBattleCharacter hero;
     static Enemy[] enemies = new Enemy[6];
-
+    Level2Image level2 = new Level2Image();
     // Battle variables
     boolean inBattle = false;
     boolean attack = false;
@@ -81,8 +82,9 @@ public class AttackTest extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 400, 1, false); 
-        //Creates images in front of background and slider in correct location 
-        setPaintOrder(AttackSlider.class, EnemyAttack.class, HeroAttack.class, AttackBar.class, Barrier.class, HeroHealthBar.class, EnemyHealthBar.class, PlayerBattleCharacter.class, ClickButton.class, Enemy.class);
+        //makes attack slider be above other objects 
+        setPaintOrder( Level2Image.class, AttackSlider.class, EnemyAttack.class, HeroAttack.class, AttackBar.class, Barrier.class, HeroHealthBar.class, EnemyHealthBar.class, PlayerBattleCharacter.class, ClickButton.class, Enemy.class);
+
 
         addObject(new HeroHealthBar(), 125, 25);
         hero = new PlayerBattleCharacter();
