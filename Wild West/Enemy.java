@@ -27,6 +27,10 @@ public class Enemy extends Actor
         move();
         endBattle();
     }
+    
+    public void addedToWorld(World AttackTest) {
+        setImage("Enemy" + ((AttackTest)getWorld()).level + "Idle2.png");
+    }
 
     private void startBattle() {
         if (getX() <= 750) {

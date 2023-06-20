@@ -61,11 +61,7 @@ public class AttackTest extends World
         if (backgroundTimer == 900 && !inBattle){
             backgroundTimer = 0;
             // Choose what background image to display based on the level
-            if (level == 1) {
-                addObject(new BackgroundImage(), 1350, 200);
-            } else {
-                addObject(new BackgroundImage2(), 1350, 200);
-            }
+            addObject(new BackgroundImage(), 1350, 200);
         }
 
         // Check if 3 enemies have been defeated

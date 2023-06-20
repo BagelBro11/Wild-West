@@ -22,9 +22,7 @@ public class EnemyAttack extends Actor
     {
         // Move
         setLocation(getX() + deltaX, getY());
-        // Change image for each level
-        setImage("EnemyAttack" + ((AttackTest)getWorld()).level + ".png");
-
+        
         //checks if it has hit the end 
         if(isTouching(Barrier.class)){
             AttackTest world = getWorldOfType(AttackTest.class);
@@ -43,6 +41,11 @@ public class EnemyAttack extends Actor
             getWorld().removeObject(this);
         }
 
+    }
+    
+    public void addedToWorld(World AttackTest) {
+        // Change image for each level
+        setImage("EnemyAttack" + ((AttackTest)getWorld()).level + ".png");
     }
 
 }

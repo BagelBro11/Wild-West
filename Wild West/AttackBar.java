@@ -16,4 +16,8 @@ public class AttackBar extends Actor
     {
         // Add your action code here.
     }
+    
+    public void addedToWorld(World AttackTest) {
+        setImage("AttackBar.png");
+    }
 }

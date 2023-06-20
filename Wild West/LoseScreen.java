@@ -32,6 +32,7 @@ public class LoseScreen extends World
         redoButton.setLocation(286,265);
         redoButton.setLocation(295,168);
         redoButton.setLocation(279,132);
+        setBackground("LoseScreenNew.png");
         //Redo button for after they lose if they wanna redo
     }
 }
