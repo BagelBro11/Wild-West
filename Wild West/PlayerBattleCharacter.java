@@ -32,6 +32,10 @@ public class PlayerBattleCharacter extends Actor
         animations();
     }
     
+    public void addedToWorld() {
+        setImage("PlayerBattleIdle2.png");
+    }
+    
     private void checkHealth() {
         if(health <= 0){
             Greenfoot.setWorld(new LoseScreen());
