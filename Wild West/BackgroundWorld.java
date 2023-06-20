@@ -21,6 +21,7 @@ public class BackgroundWorld extends World
         super(900, 400, 1, false); 
         setPaintOrder(BackgroundImage.class);
         addObject(new BackgroundImage(), 450, 200);
+        //Background Add
     }
     
     public void act(){

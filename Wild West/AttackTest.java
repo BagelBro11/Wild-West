@@ -36,7 +36,7 @@ public class AttackTest extends World
     public void act(){
         enemyAttack();
         heroAttack();
-        
+
         // Check to see if a new enemy needs to be added
         if (addNewEnemy == true && lastEnemyInWorld < 6) {
             addObject(enemies[lastEnemyInWorld], 1200, 200);
@@ -74,6 +74,8 @@ public class AttackTest extends World
         if (lastEnemyInWorld == 3) {
             level = 2;
         }
+        
+        defeatedAllEnemies();
     }
 
     /**
@@ -86,6 +88,7 @@ public class AttackTest extends World
         super(900, 400, 1, false); 
         //makes attack slider be above other objects 
         setPaintOrder( Level2Image.class, AttackSlider.class, EnemyAttack.class, HeroAttack.class, AttackBar.class, Barrier.class, HeroHealthBar.class, EnemyHealthBar.class, PlayerBattleCharacter.class, ClickButton.class, Enemy.class);
+
 
         addObject(new HeroHealthBar(), 125, 25);
         hero = new PlayerBattleCharacter();
@@ -101,6 +104,7 @@ public class AttackTest extends World
      * method which randomly controls the NPC attack 
      */
     private void enemyAttack(){
+        // Checks to see if battle is true for scroll to occur
         if(inBattle == true){
             enemyTimer++;
             if(enemyTimer > Greenfoot.getRandomNumber(4000)){
@@ -121,6 +125,7 @@ public class AttackTest extends World
                 heroTimerTarget = getRandomNumber(100, 400);
                 int randX = getRandomNumber(200, 700);
                 addObject(new HeroAttack(), randX, 325);
+                //Hero attack button
             }
         }
     }
@@ -131,5 +136,16 @@ public class AttackTest extends World
     public int getRandomNumber(int start, int end){
         int normal = Greenfoot.getRandomNumber(end - start +1);
         return normal + start;
+        
+    }
+    
+    /**
+     * Checks if all enemies have been defeated
+     * Changes the world to the win screen if they have
+     */
+    private void defeatedAllEnemies() {
+        if (lastEnemyInWorld == 6) {
+            Greenfoot.setWorld(new WinScreen());
+        }
     }
 }
