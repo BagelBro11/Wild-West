@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class EnemyAttack extends Actor
 {
     int deltaX;
+    int damage = 10;
     public EnemyAttack(){
         deltaX = -3;
     }
@@ -23,10 +24,15 @@ public class EnemyAttack extends Actor
         setLocation(getX() + deltaX, getY());
         // Change image for each level
         setImage("EnemyAttack" + ((AttackTest)getWorld()).level + ".png");
-        
+
         //checks if it has hit the end 
         if(isTouching(Barrier.class)){
-            AttackTest.hero.health -= 10;
+            AttackTest world = getWorldOfType(AttackTest.class);
+            
+            if(world.level == 2){
+                damage = 25;
+            }
+            AttackTest.hero.health -= damage;
             ((AttackTest)getWorld()).enemyAttack = true;
             if(AttackSlider.deltaX > 0){
                 AttackSlider.deltaX = 4;
@@ -36,8 +42,7 @@ public class EnemyAttack extends Actor
             }
             getWorld().removeObject(this);
         }
-        
+
     }
 
-    
 }
