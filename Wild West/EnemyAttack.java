@@ -35,12 +35,7 @@ public class EnemyAttack extends Actor
             getWorld().addObject(new Damage(damage), 250, 200);
             // Start Enemy animation
             ((AttackTest)getWorld()).enemyAttack = true;
-            if(AttackSlider.deltaX > 0){
-                AttackSlider.deltaX = 4;
-            }
-            else{
-                AttackSlider.deltaX = -4;
-            }
+            // Remove the object, it has reached the end
             getWorld().removeObject(this);
         }
 

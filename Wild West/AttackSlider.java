@@ -61,10 +61,10 @@ public class AttackSlider extends Actor
      */
     private void isHit(){
         if(isTouching(EnemyAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
+            // Speed boost if clicked
             deltaX += 1;
-
+            // Remove the object
             removeTouching(EnemyAttack.class);
-            //speed boost if clicked and removal
         }
         else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
             // Set attack to true to start animation            
@@ -80,7 +80,7 @@ public class AttackSlider extends Actor
             removeTouching(HeroAttack.class);
         }
         else if(isTouching(AttackBar.class) && Greenfoot.mousePressed(AttackTest.click)){
-            // Missed objects, therefore speed is reset
+            // Missed object, therefore speed is reset
             deltaX = 4;
 
             // Damage penalty for hitting the bar

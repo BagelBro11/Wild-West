@@ -27,13 +27,10 @@ public class LoseScreen extends World
      */
     private void prepare()
     {
-        RedoButton redoButton = new RedoButton();
-        addObject(redoButton,283,228);
-        redoButton.setLocation(308,257);
-        redoButton.setLocation(286,265);
-        redoButton.setLocation(295,168);
-        redoButton.setLocation(279,132);
-        setBackground("LoseScreenNew.png");
         //Redo button for after they lose if they wanna redo
+        RedoButton redoButton = new RedoButton();
+        addObject(redoButton,279,132);
+        // Set image for background
+        setBackground("LoseScreenNew.png");
     }
 }
