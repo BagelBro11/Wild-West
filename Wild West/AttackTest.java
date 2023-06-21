@@ -38,8 +38,9 @@ public class AttackTest extends World
         // Check if 3 enemies have been defeated
         // If fewer than 3 enemies have been defeated, it is still level 1
         // If more than 3 or 3 enemies have been defeated, it is level 2
-        if (lastEnemyInWorld == 3) {
+        if (lastEnemyInWorld == 3 && level != 2) {
             level = 2;
+            addObject(new Level2Image(), 450, 100);
         }
 
         enemyAttack();
