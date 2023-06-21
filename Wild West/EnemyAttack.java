@@ -26,11 +26,13 @@ public class EnemyAttack extends Actor
         //checks if it has hit the end 
         if(isTouching(Barrier.class)){
             AttackTest world = getWorldOfType(AttackTest.class);
-            
             if(world.level == 2){
                 damage = 25;
             }
             AttackTest.hero.health -= damage;
+            // Display damage
+            getWorld().addObject(new Damage(damage), 250, 200);
+            // Start Enemy animation
             ((AttackTest)getWorld()).enemyAttack = true;
             if(AttackSlider.deltaX > 0){
                 AttackSlider.deltaX = 4;
