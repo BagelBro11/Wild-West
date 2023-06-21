@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Damage extends Actor
 {
-    int count = 50;
+    int count = 100;
     public Damage(int damage) {
         setImage("Damage(-" + damage + ").png");
     }
