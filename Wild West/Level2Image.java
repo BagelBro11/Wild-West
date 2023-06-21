@@ -8,13 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level2Image extends Actor
 {
+    int deleteCount = 300;
     /**
      * Act - do whatever the Level2Image wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        // Add your action code here.
+        // Count down to actor deletion
+        deleteCount--;
+        if (deleteCount == 0) {
+            getWorld().removeObject(this);
+        }
     }
 
     /**
