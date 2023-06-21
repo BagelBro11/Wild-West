@@ -21,7 +21,7 @@ public class WinScreen extends World
         prepare();
         //Sent to win world after all enemys are killed
     }
-    
+
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.

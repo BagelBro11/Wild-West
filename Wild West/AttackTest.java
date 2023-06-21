@@ -41,7 +41,7 @@ public class AttackTest extends World
         if (lastEnemyInWorld == 3) {
             level = 2;
         }
-        
+
         enemyAttack();
         heroAttack();
 
@@ -143,7 +143,7 @@ public class AttackTest extends World
         int normal = Greenfoot.getRandomNumber(end - start +1);
         return normal + start;
     }
-    
+
     /**
      * Checks if all enemies have been defeated
      * Changes the world to the win screen if they have

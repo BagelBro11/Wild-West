@@ -16,7 +16,10 @@ public class Level2Image extends Actor
     {
         // Add your action code here.
     }
-    
+
+    /**
+     * Set image
+     */
     public void addedToWorld(World AttackTest) {
         setImage("Level2.png");
     }

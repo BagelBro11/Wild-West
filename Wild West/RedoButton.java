@@ -20,6 +20,9 @@ public class RedoButton extends Actor
         }    
     }
 
+    /**
+     * Set image
+     */
     public void addedToWorld(World World) {
         setImage("RedoButton.png");
     }

@@ -11,7 +11,9 @@ public class AttackSlider extends Actor
     //speed X variable
     public static double deltaX;
     boolean moveRight = true;
-
+    /**
+     * Setting speed
+     */
     public AttackSlider(){
         //setting speed
         deltaX = 4;
@@ -32,11 +34,17 @@ public class AttackSlider extends Actor
             setLocation(getX() - (int)deltaX, getY());
         }
     }
-    
+
+    /**
+     * Set image
+     */
     public void addedToWorld(World AttackTest) {
         setImage("AttackSlider.png");
     }
 
+    /**
+     * Change direction when at edge of the attack bar
+     */
     private void bouncing(){
         //if touching left side of attack bar go other way
         if(getX() < 200){
@@ -74,7 +82,9 @@ public class AttackSlider extends Actor
         else if(isTouching(AttackBar.class) && Greenfoot.mousePressed(AttackTest.click)){
             // Missed object, therefore speed is reset
             deltaX = 4;
+
             // Damage penalty for hitting the bar
+
             AttackTest.hero.health -= 5;
             // Display damage
             getWorld().addObject(new Damage(5), 250, 200);

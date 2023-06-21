@@ -19,7 +19,10 @@ public class StartButton extends Actor
             Greenfoot.setWorld(new AttackTest());
         }
     }
-    
+
+    /**
+     * Set image
+     */
     public void addedToWorld(World IntroScreen) {
         setImage("StartButton.jpg");
     }

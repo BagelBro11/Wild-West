@@ -27,17 +27,27 @@ public class Enemy extends Actor
         move();
         endBattle();
     }
-    
+
+    /**
+     * Set image
+     */
     public void addedToWorld(World AttackTest) {
         setImage("Enemy" + ((AttackTest)getWorld()).level + "Idle2.png");
     }
 
+    /**
+     * Start battle if enemy has reached battle location
+     */
     private void startBattle() {
         if (getX() <= 750) {
             ((AttackTest)getWorld()).inBattle = true;
         }
     }
 
+    /**
+     * Move when not in battle
+     * Start animations if in battle
+     */
     private void move() {
         if (!((AttackTest)getWorld()).inBattle) {
             move(-1);
@@ -47,6 +57,9 @@ public class Enemy extends Actor
         }
     }
 
+    /**
+     * Select the animation used
+     */
     private void animations() {
         if (((AttackTest)getWorld()).enemyAttack == true) {
             // Attack
@@ -57,6 +70,9 @@ public class Enemy extends Actor
         }
     }
 
+    /**
+     * When enemy used each animation
+     */
     private void attack() {
         // imageDelay counts down to zero to change the image
         imageDelay--;
@@ -92,6 +108,9 @@ public class Enemy extends Actor
         }
     }
 
+    /**
+     * Idle code for enemy
+     */
     private void idle() {
         // imageDelay counts down to zero to change the image
         imageDelay--;
@@ -109,6 +128,9 @@ public class Enemy extends Actor
         }
     }
 
+    /**
+     * Method to check if battle is completed
+     */
     private void endBattle() {
         // Check if the enemy has any health left
         // If not, remove all classes associated with the battle and add one to the enemy count
@@ -121,6 +143,9 @@ public class Enemy extends Actor
         }
     }
 
+    /**
+     * Removed objects once battle completed
+     */
     private void removeAttackClasses() {
         // Store all classes that need to be removed in an array
         Class names[] = {AttackBar.class, AttackSlider.class, Barrier.class, ClickButton.class, EnemyAttack.class, HeroAttack.class, EnemyHealthBar.class, Enemy.class};

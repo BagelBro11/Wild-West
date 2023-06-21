@@ -20,6 +20,7 @@ public class LoseScreen extends World
         prepare();
         //Sent to this world from attack test after no health left
     }
+
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
