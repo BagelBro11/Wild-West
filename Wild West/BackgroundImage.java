@@ -20,7 +20,10 @@ public class BackgroundImage extends Actor
             setLocation(getX() -1, getY());
         }
     }
-    
+
+    /**
+     * Set image
+     */
     public void addedToWorld(World AttackTest) {
         setImage("Background" + ((AttackTest)getWorld()).level + ".jpg");
     }
