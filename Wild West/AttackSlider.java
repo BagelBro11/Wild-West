@@ -67,19 +67,27 @@ public class AttackSlider extends Actor
             //speed boost if clicked and removal
         }
         else if(isTouching(HeroAttack.class) && Greenfoot.mousePressed(AttackTest.click)){
-            deltaX += 1;
-            Enemy enemy = ((AttackTest)getWorld()).enemies[((AttackTest)getWorld()).lastEnemyInWorld];
-            enemy.health -= 10;
-            //Hero damage
+            // Set attack to true to start animation            
             ((AttackTest)getWorld()).attack = true;
+            // Find what enemy is in the battle
+            Enemy enemy = ((AttackTest)getWorld()).enemies[((AttackTest)getWorld()).lastEnemyInWorld];
+            // Hero damage
+            enemy.health -= 10;
+            // Display damage
+            getWorld().addObject(new Damage(10), 650, 200);
+            // Speed boost if clicked and removal
+            deltaX += 1;
             removeTouching(HeroAttack.class);
-            //speed boost if clicked and removal
         }
         else if(isTouching(AttackBar.class) && Greenfoot.mousePressed(AttackTest.click)){
+            // Missed objects, therefore speed is reset
             deltaX = 4;
 
+            // Damage penalty for hitting the bar
+
             AttackTest.hero.health -= 5;
-            //Enemy damage
+            // Display damage
+            getWorld().addObject(new Damage(5), 250, 200);
         }
 
     }

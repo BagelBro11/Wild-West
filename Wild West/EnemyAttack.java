@@ -31,6 +31,9 @@ public class EnemyAttack extends Actor
                 damage = 25;
             }
             AttackTest.hero.health -= damage;
+            // Display damage
+            getWorld().addObject(new Damage(damage), 250, 200);
+            // Start Enemy animation
             ((AttackTest)getWorld()).enemyAttack = true;
             if(AttackSlider.deltaX > 0){
                 AttackSlider.deltaX = 4;

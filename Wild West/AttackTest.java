@@ -90,7 +90,7 @@ public class AttackTest extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 400, 1, false); 
         //makes attack slider be above other objects 
-        setPaintOrder( Level2Image.class, AttackSlider.class, EnemyAttack.class, HeroAttack.class, AttackBar.class, Barrier.class, HeroHealthBar.class, EnemyHealthBar.class, PlayerBattleCharacter.class, ClickButton.class, Enemy.class);
+        setPaintOrder(Level2Image.class, Damage.class, AttackSlider.class, EnemyAttack.class, HeroAttack.class, AttackBar.class, Barrier.class, HeroHealthBar.class, EnemyHealthBar.class, PlayerBattleCharacter.class, ClickButton.class, Enemy.class);
 
         addObject(new HeroHealthBar(), 125, 25);
         hero = new PlayerBattleCharacter();
