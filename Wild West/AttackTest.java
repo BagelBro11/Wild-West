@@ -33,12 +33,26 @@ public class AttackTest extends World
 
     int lastEnemyInWorld = 0;
     int level = 1;
+    int delayForLevel2 = 0;
     public void act(){
+        // Check if 3 enemies have been defeated
+        // If fewer than 3 enemies have been defeated, it is still level 1
+        // If more than 3 or 3 enemies have been defeated, it is level 2
+        if (lastEnemyInWorld == 3) {
+            level = 2;
+        }
+        
         enemyAttack();
         heroAttack();
 
+        if (level == 2) {
+            delayForLevel2++;
+        }
         // Check to see if a new enemy needs to be added
-        if (addNewEnemy == true && lastEnemyInWorld < 6) {
+        if (addNewEnemy == true && lastEnemyInWorld < 3) {
+            addObject(enemies[lastEnemyInWorld], 1200, 200);
+            addNewEnemy = false;
+        } else if (addNewEnemy == true && lastEnemyInWorld < 6 && delayForLevel2 >= 1350) {
             addObject(enemies[lastEnemyInWorld], 1200, 200);
             addNewEnemy = false;
         }
@@ -62,13 +76,6 @@ public class AttackTest extends World
             backgroundTimer = 0;
             // Choose what background image to display based on the level
             addObject(new BackgroundImage(), 1350, 200);
-        }
-
-        // Check if 3 enemies have been defeated
-        // If fewer than 3 enemies have been defeated, it is still level 1
-        // If more than 3 or 3 enemies have been defeated, it is level 2
-        if (lastEnemyInWorld == 3) {
-            level = 2;
         }
         
         defeatedAllEnemies();
