@@ -28,10 +28,10 @@ public class WinScreen extends World
      */
     private void prepare()
     {
+        //Redo if they wanna play again
         RedoButton redoButton = new RedoButton();
         addObject(redoButton,295,286);
-        redoButton.setLocation(295,286);
+        // Set image for background
         setBackground("WinScreen.jpg");
-        //Redo if they wanna play again
     }
 }

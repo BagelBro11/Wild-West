@@ -18,6 +18,6 @@ public class Level2Image extends Actor
     }
     
     public void addedToWorld(World AttackTest) {
-        setImage("Level2");
+        setImage("Level2.png");
     }
 }

@@ -78,6 +78,7 @@ public class AttackTest extends World
             addObject(new BackgroundImage(), 1350, 200);
         }
         
+        // Check if all enemies have been defeated
         defeatedAllEnemies();
     }
 
@@ -92,12 +93,13 @@ public class AttackTest extends World
         //makes attack slider be above other objects 
         setPaintOrder(Level2Image.class, Damage.class, AttackSlider.class, EnemyAttack.class, HeroAttack.class, AttackBar.class, Barrier.class, HeroHealthBar.class, EnemyHealthBar.class, PlayerBattleCharacter.class, ClickButton.class, Enemy.class);
 
-
+        // Add actors to the world
         addObject(new HeroHealthBar(), 125, 25);
         hero = new PlayerBattleCharacter();
         addObject(hero, 150, 200);
         addObject(new BackgroundImage(), 450, 200);
 
+        // Set values of the enemies array to the Enemy class
         for (int i = 0; i < enemies.length; i++) {
             enemies[i] = new Enemy();
         }
@@ -111,6 +113,7 @@ public class AttackTest extends World
         if(inBattle == true){
             enemyTimer++;
             if(enemyTimer > Greenfoot.getRandomNumber(4000)){
+                // Reset timer and add an EnemyAttack
                 enemyTimer = 0;
                 addObject(new EnemyAttack(), 700, 325);
             }
@@ -124,11 +127,11 @@ public class AttackTest extends World
         if(inBattle == true){
             heroTimer++;
             if(heroTimer == heroTimerTarget){
+                // Reset timer and add a HeroAttack to a random location on the AttackBar
                 heroTimer = 0;
                 heroTimerTarget = getRandomNumber(100, 400);
                 int randX = getRandomNumber(200, 700);
                 addObject(new HeroAttack(), randX, 325);
-                //Hero attack button
             }
         }
     }
@@ -139,7 +142,6 @@ public class AttackTest extends World
     public int getRandomNumber(int start, int end){
         int normal = Greenfoot.getRandomNumber(end - start +1);
         return normal + start;
-        
     }
     
     /**
@@ -148,6 +150,7 @@ public class AttackTest extends World
      */
     private void defeatedAllEnemies() {
         if (lastEnemyInWorld == 6) {
+            // Set the world to the win screen if the player defeated all the enemies
             Greenfoot.setWorld(new WinScreen());
         }
     }
