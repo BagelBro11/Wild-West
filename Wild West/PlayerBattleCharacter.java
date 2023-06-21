@@ -31,17 +31,26 @@ public class PlayerBattleCharacter extends Actor
         // Run animations
         animations();
     }
-    
+
+    /**
+     * Set image
+     */
     public void addedToWorld() {
         setImage("PlayerBattleIdle2.png");
     }
-    
+
+    /**
+     * Losing condition
+     */
     private void checkHealth() {
         if(health <= 0){
             Greenfoot.setWorld(new LoseScreen());
         }
     }
 
+    /**
+     * Select the animation used
+     */
     private void animations() {
         if (((AttackTest)getWorld()).inBattle == false) {
             // Run animation
@@ -57,6 +66,9 @@ public class PlayerBattleCharacter extends Actor
         }
     }
 
+    /**
+     * Walking of player to new map
+     */
     private void run () {
         // Count down until next image can be displayed
         imageDelay--;
@@ -74,6 +86,9 @@ public class PlayerBattleCharacter extends Actor
         }
     }
 
+    /**
+     * When hero used each animation
+     */
     private void attack() {
         // Count down until next image can be displayed
         imageDelay--;
@@ -110,6 +125,9 @@ public class PlayerBattleCharacter extends Actor
         }
     }
 
+    /**
+     * Idle code for hero
+     */
     private void idle() {
         // Count down until next image can be displayed
         imageDelay--;
